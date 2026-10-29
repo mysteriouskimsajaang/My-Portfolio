@@ -122,10 +122,10 @@ footer{color:var(--mut);text-align:center;font-size:.88rem;padding:3rem 0 3.5rem
   <h2>Projects</h2><p class="sub">Group and personal work in GPU computing, local AI and systems programming.</p>
   <div class="grid">
     <article class="card proj">
-      <div class="thumb g1"><span>CUDA</span><img src="images/cuda.png" alt="CUDA project on GitHub" loading="lazy" onerror="this.onerror=function(){this.remove()};this.src='https://opengraph.githubassets.com/1/mysteriouskimsajaang/CEPARCO-CUDA-Edge-Detection'"></div>
-      <div class="pb"><h3>CUDA-Accelerated Image Processing<span class="tag">In progress</span></h3><div class="meta">Group of 4 · CUDA, C/C++</div>
-      <p>Gaussian blur and Sobel edge detection on an NVIDIA GPU, benchmarked against a sequential CPU version.</p>
-      <a href="https://github.com/mysteriouskimsajaang/CEPARCO-CUDA-Edge-Detection" target="_blank" rel="noopener">Source on GitHub</a></div>
+      <div class="thumb g1"><span>CUDA</span><img src="images/cuda.png" alt="CUDA project on GitHub" loading="lazy" onerror="this.onerror=function(){this.remove()};this.src='https://opengraph.githubassets.com/1/mysteriouskimsajaang/CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-'"></div>
+      <div class="pb"><h3>CPU vs. GPU Terrain Generation with CUDA<span class="tag">In progress</span></h3><div class="meta">Group of 4 · CUDA, C/C++</div>
+      <p>Perlin-noise heightmap generation benchmarked across CPU and NVIDIA GPU implementations to measure when CUDA outperforms sequential C++.</p>
+      <a href="https://github.com/mysteriouskimsajaang/CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-" target="_blank" rel="noopener">Source on GitHub</a></div>
     </article>
     <article class="card proj">
       <div class="thumb g2"><span>WEB</span><img src="images/xray.png" alt="Project X-Ray website screenshot" loading="lazy" onerror="this.remove()"></div>
@@ -140,25 +140,25 @@ footer{color:var(--mut);text-align:center;font-size:.88rem;padding:3rem 0 3.5rem
     </article>
     <article class="card proj">
       <div class="thumb g4"><span>OS</span><img src="images/os.png" alt="Desktop-style OS emulator screenshot" loading="lazy" onerror="this.onerror=function(){this.remove()};this.src='https://opengraph.githubassets.com/1/kimsajaang/OS_EMULATOR'"></div>
-      <div class="pb"><h3>Desktop-Style OS Emulator</h3><div class="meta">Group of 4 · C++, Dear ImGui, OpenGL</div>
+      <div class="pb"><h3>Desktop-Style OS Emulator<span class="tag done">Completed</span></h3><div class="meta">Group of 4 · C++, Dear ImGui, OpenGL</div>
       <p>A desktop-style operating system mock-up for Windows with a graphical shell and a task manager.</p>
       <a href="https://github.com/kimsajaang/OS_EMULATOR" target="_blank" rel="noopener">Source on GitHub</a></div>
     </article>
     <article class="card proj">
       <div class="thumb g5"><span>CLI</span><img src="https://opengraph.githubassets.com/1/mysteriouskimsajaang/Process-Scheduler-CLI" alt="Process Scheduler CLI on GitHub" loading="lazy" onerror="this.remove()"></div>
-      <div class="pb"><h3>Process Scheduler CLI</h3><div class="meta">Personal project · C++</div>
+      <div class="pb"><h3>Process Scheduler CLI<span class="tag done">Completed</span></h3><div class="meta">Personal project · C++</div>
       <p>Command-line CPU process scheduler and simulator implementing algorithms like FCFS with configurable testing and metrics.</p>
       <a href="https://github.com/mysteriouskimsajaang/Process-Scheduler-CLI" target="_blank" rel="noopener">Source on GitHub</a></div>
     </article>
     <article class="card proj">
       <div class="thumb g6"><span>C</span><img src="https://opengraph.githubassets.com/1/mysteriouskimsajaang/Payroll-Computation-in-C" alt="Payroll Computation on GitHub" loading="lazy" onerror="this.remove()"></div>
-      <div class="pb"><h3>Payroll Computation in C</h3><div class="meta">Personal project · C</div>
+      <div class="pb"><h3>Payroll Computation in C<span class="tag done">Completed</span></h3><div class="meta">Personal project · C</div>
       <p>Console-based payroll computation system in C calculating gross pay, statutory deductions, net income, and pay slips.</p>
       <a href="https://github.com/mysteriouskimsajaang/Payroll-Computation-in-C" target="_blank" rel="noopener">Source on GitHub</a></div>
     </article>
     <article class="card proj">
       <div class="thumb g2"><span>APP</span><img src="https://opengraph.githubassets.com/1/mysteriouskimsajaang/App-Tracker" alt="Backlog Hero App Tracker on GitHub" loading="lazy" onerror="this.remove()"></div>
-      <div class="pb"><h3>Backlog Hero – Game Library Tracker<span class="tag">Full-Stack</span></h3><div class="meta">Frontend & Backend · Node.js, Express, MongoDB, Handlebars</div>
+      <div class="pb"><h3>Backlog Hero – Game Library Tracker<span class="tag done">Completed</span></h3><div class="meta">Frontend & Backend · Node.js, Express, MongoDB, Handlebars</div>
       <p>Built end-to-end full-stack across both frontend and backend: responsive Handlebars views and client-side interactions, coupled with Express server routes, MongoDB schemas, Steam/OAuth authentication, and IGDB API integration.</p>
       <a href="https://github.com/mysteriouskimsajaang/App-Tracker" target="_blank" rel="noopener">Source on GitHub</a></div>
     </article>
@@ -215,7 +215,7 @@ footer{color:var(--mut);text-align:center;font-size:.88rem;padding:3rem 0 3.5rem
 var U='mysteriouskimsajaang',GH='https://github.com/'+U,LI='https://www.linkedin.com/in/kane-joshua-ibanez-213274338/';
 var modal=document.getElementById('modal'),body=document.getElementById('wbody'),last=null;
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-var FALL=[['Retrieval-Augmented-Generation','Offline PDF question answering with a local model','Python'],['CEPARCO-CUDA-Edge-Detection','CPU vs. GPU terrain generation with CUDA','Cuda'],['Process-Scheduler-CLI','Command-line process scheduler','C++'],['Payroll-Computation-in-C','Payroll computation program','C'],['App-Tracker','Social game backlog tracker web app','Handlebars'],['OS_EMULATOR','Desktop-style OS emulator mockup with graphical shell','C++']];
+var FALL=[['Retrieval-Augmented-Generation','Offline PDF question answering with a local model','Python'],['CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-','CPU vs. GPU terrain generation with CUDA','Cuda'],['Process-Scheduler-CLI','Command-line process scheduler','C++'],['Payroll-Computation-in-C','Payroll computation program','C'],['App-Tracker','Social game backlog tracker web app','Handlebars'],['OS_EMULATOR','Desktop-style OS emulator mockup with graphical shell','C++']];
 function repoHTML(n,d,l,up){return '<a class="repo" href="'+GH+'/'+esc(n)+'" target="_blank" rel="noopener"><b>'+esc(n)+'</b><span>'+esc(d||'No description yet')+'</span><small>'+esc(l||'')+(up?' · updated '+esc(up.slice(0,10)):'')+'</small></a>'}
 function github(){
   document.getElementById('wtitle').textContent='github.com/'+U;document.getElementById('wopen').href=GH;
