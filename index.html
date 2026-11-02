@@ -434,7 +434,13 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover
+      object-fit: cover;
+      object-position: top left;
+      transition: transform .5s ease
+    }
+
+    .proj:hover .thumb img {
+      transform: scale(1.04)
     }
 
     .g1 {
@@ -873,9 +879,8 @@
           </div>
         </article>
         <article class="card proj">
-          <div class="thumb g5"><span>CLI</span><img
-              src="https://opengraph.githubassets.com/1/mysteriouskimsajaang/Process-Scheduler-CLI"
-              alt="Process Scheduler CLI on GitHub" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb g5"><span>CLI</span><img src="images/process-scheduler.jpg"
+              alt="Process Scheduler CLI running round-robin scheduling across 4 CPU cores" loading="lazy" onerror="this.remove()"></div>
           <div class="pb">
             <h3>Process Scheduler CLI<span class="tag done">Completed</span></h3>
             <div class="meta">Personal project · C++</div>
@@ -886,9 +891,8 @@
           </div>
         </article>
         <article class="card proj">
-          <div class="thumb g6"><span>C</span><img
-              src="https://opengraph.githubassets.com/1/mysteriouskimsajaang/Payroll-Computation-in-C"
-              alt="Payroll Computation on GitHub" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb g6"><span>C</span><img src="images/payroll.jpg"
+              alt="Payroll Computation in C showing a computed payslip with SSS, PhilHealth and PAG-IBIG deductions" loading="lazy" onerror="this.remove()"></div>
           <div class="pb">
             <h3>Payroll Computation in C<span class="tag done">Completed</span></h3>
             <div class="meta">Personal project · C</div>
@@ -899,9 +903,8 @@
           </div>
         </article>
         <article class="card proj">
-          <div class="thumb g3"><span>C</span><img
-              src="https://opengraph.githubassets.com/1/mysteriouskimsajaang/Food-Log-using-C-"
-              alt="Food Log in C on GitHub" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb g3"><span>C</span><img src="images/food-log.jpg"
+              alt="Food Log and Recipe Manager listing saved food logs in the console" loading="lazy" onerror="this.remove()"></div>
           <div class="pb">
             <h3>Food Log &amp; Recipe Manager<span class="tag done">Completed</span></h3>
             <div class="meta">Personal project · C</div>
@@ -912,9 +915,8 @@
           </div>
         </article>
         <article class="card proj">
-          <div class="thumb g2"><span>APP</span><img
-              src="https://opengraph.githubassets.com/1/mysteriouskimsajaang/App-Tracker"
-              alt="Backlog Hero App Tracker on GitHub" loading="lazy" onerror="this.remove()"></div>
+          <div class="thumb g2"><span>APP</span><img src="images/backlog-hero.jpg"
+              alt="Backlog Hero dashboard with library stats and trending games" loading="lazy" onerror="this.remove()"></div>
           <div class="pb">
             <h3>Backlog Hero – Game Library Tracker<span class="tag done">Completed</span></h3>
             <div class="meta">Frontend & Backend · Node.js, Express, MongoDB, Handlebars</div>
