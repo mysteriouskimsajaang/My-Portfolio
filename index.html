@@ -300,6 +300,9 @@
       object-position: top left
     }
 
+    .shot.fit-shot { background: #0b1017; padding: .65rem }
+    .shot.fit-shot img { object-fit: contain; object-position: center; border-radius: 6px }
+
     .kind { font-size: .9rem; color: var(--mut); margin: 0 0 .5rem }
 
     .proj h3 {
@@ -739,6 +742,8 @@
     }
 
     .stage > img { width: 100%; height: 100%; object-fit: cover; object-position: top left }
+    .stage.fit-shot { background: #0b1017; padding: 1rem }
+    .stage.fit-shot > img { object-fit: contain; object-position: center; border-radius: 6px }
 
     .stage .ph { position: absolute }
 
@@ -760,6 +765,7 @@
     .thumbs button[aria-current="true"] { border-color: var(--copper); opacity: 1 }
 
     .thumbs img { width: 100%; height: 100%; object-fit: cover; object-position: top left }
+    .thumbs button.fit-shot img { object-fit: contain; background: #0b1017 }
 
     .caption { margin: .6rem 0 0; font-size: .88rem; color: var(--mut) }
 
@@ -1002,8 +1008,8 @@
       </div>
 
       <article class="feature proj" data-id="backlog">
-        <div class="shot can-open" data-open="backlog"><span class="peek" aria-hidden="true">View gallery</span><img src="images/backlog-hero-live-home.png"
-            alt="Backlog Hero dashboard with library stats and trending games" loading="lazy"></div>
+        <div class="shot can-open fit-shot" data-open="backlog"><span class="peek" aria-hidden="true">View project image</span><img src="images/backlog-hero-home-wide.jpg"
+          alt="Backlog Hero landing page" loading="lazy"></div>
         <div>
           <p class="kind">Full-stack web app <span class="state">Completed</span></p>
           <h3>Backlog Hero, a game library tracker</h3>
@@ -1023,7 +1029,7 @@
       </article>
 
       <article class="feature flip proj" data-id="sched">
-        <div class="shot can-open" data-open="sched" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/process-scheduler.jpg"
+        <div class="shot can-open fit-shot" data-open="sched" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/process-scheduler.jpg"
             alt="Process Scheduler CLI running round-robin scheduling across 4 CPU cores" loading="lazy"></div>
         <div>
           <p class="kind">Group of 4, operating systems <span class="state">Completed</span></p>
@@ -1042,7 +1048,7 @@
 
       <div class="grid">
         <article class="card proj" data-id="cuda">
-          <div class="shot can-open" data-open="cuda"><span class="peek" aria-hidden="true">View details</span><div class="ph" aria-hidden="true"><span>CUDA</span></div><img src="images/cuda.png"
+          <div class="shot can-open fit-shot" data-open="cuda"><span class="peek" aria-hidden="true">View details</span><div class="ph" aria-hidden="true"><span>CUDA</span></div><img src="images/cuda.png"
               alt="CPU vs. GPU terrain generation project" loading="lazy"
               onerror="this.onerror=function(){this.remove()};this.src='https://opengraph.githubassets.com/1/mysteriouskimsajaang/CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-'">
           </div>
@@ -1061,7 +1067,7 @@
         </article>
 
         <article class="card proj" data-id="rag">
-          <div class="shot can-open" data-open="rag"><span class="peek" aria-hidden="true">View details</span><img src="images/rag.jpg"
+          <div class="shot can-open fit-shot" data-open="rag"><span class="peek" aria-hidden="true">View details</span><img src="images/rag.jpg"
               alt="Local PDF Assistant interface with document upload and local model settings" loading="lazy">
           </div>
           <div class="body">
@@ -1079,7 +1085,7 @@
         </article>
 
         <article class="card proj" data-id="payroll">
-          <div class="shot can-open" data-open="payroll" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/payroll.jpg"
+          <div class="shot can-open fit-shot" data-open="payroll" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/payroll.jpg"
               alt="Payroll Computation in C showing a computed payslip with SSS, PhilHealth and PAG-IBIG deductions"
               loading="lazy"></div>
           <div class="body">
@@ -1097,7 +1103,7 @@
         </article>
 
         <article class="card proj" data-id="food">
-          <div class="shot can-open" data-open="food" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/food-log.jpg"
+          <div class="shot can-open fit-shot" data-open="food" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/food-log.jpg"
               alt="Food Log and Recipe Manager listing saved food logs in the console" loading="lazy"></div>
           <div class="body">
             <p class="kind">Personal project <span class="state">Completed</span></p>
@@ -1129,7 +1135,7 @@
         </article>
 
         <article class="card proj" data-id="retro">
-          <div class="shot can-open" data-open="retro"><span class="peek" aria-hidden="true">View gallery</span><img src="images/retrospec-exhibit.png" alt="RetroSpec virtual exhibit homepage showing the evolution of computer graphics" loading="lazy"></div>
+          <div class="shot can-open fit-shot" data-open="retro"><span class="peek" aria-hidden="true">View gallery</span><img src="images/retrospec-home-wide.jpg" alt="RetroSpec virtual exhibit homepage showing the evolution of computer graphics" loading="lazy"></div>
           <div class="body">
             <p class="kind">Group project <span class="state">Completed</span></p>
             <h3>RetroSpec virtual exhibit</h3>
@@ -1144,7 +1150,7 @@
         </article>
 
         <article class="card proj" data-id="catbot">
-          <div class="shot can-open" data-open="catbot"><span class="peek" aria-hidden="true">View gallery</span><img src="images/catbot-game.png" alt="Catbot game environment rendered from the Python project" loading="lazy"></div>
+          <div class="shot can-open fit-shot" data-open="catbot"><span class="peek" aria-hidden="true">View gallery</span><img src="images/catbot-game.png" alt="Catbot game environment rendered from the Python project" loading="lazy"></div>
           <div class="body">
             <p class="kind">Group project <span class="state">Completed</span></p>
             <h3>Catbot reinforcement-learning environment</h3>
@@ -1157,7 +1163,7 @@
         </article>
 
         <article class="card proj" data-id="imagpro">
-          <div class="shot can-open" data-open="imagpro"><span class="peek" aria-hidden="true">View gallery</span><img src="images/imagpro-affine-1.png" alt="Image processing notebook output showing an affine transformation" loading="lazy"></div>
+          <div class="shot can-open fit-shot" data-open="imagpro"><span class="peek" aria-hidden="true">View gallery</span><img src="images/imagpro-affine-1.png" alt="Image processing notebook output showing an affine transformation" loading="lazy"></div>
           <div class="body">
             <p class="kind">Course project <span class="state">Completed</span></p>
             <h3>Image processing machine projects</h3>
@@ -1207,6 +1213,14 @@
           <dt>Systems &amp; tools</dt>
           <dd>CUDA Toolkit, Dear ImGui, OpenGL, GLFW, Git &amp; GitHub, GDB, Linux, Visual Studio</dd>
         </div>
+        <div>
+          <dt>Core concepts</dt>
+          <dd>Parallel computing, CPU vs. GPU workloads, process scheduling, data structures and algorithms</dd>
+        </div>
+        <div>
+          <dt>Working style</dt>
+          <dd>Leadership, communication, problem solving, time management, collaboration and adaptability</dd>
+        </div>
       </dl>
     </section>
 
@@ -1220,6 +1234,8 @@
           <ul>
             <li>Project Coordinator<small>Google Developer Groups on Campus – DLSU</small></li>
             <li>Assistant Vice President for Corporate Relations<small>AY 2023–2024</small></li>
+            <li>Leadership Program Trainee<small>Investor Society · AY 2026–Present</small></li>
+            <li>Vice President for Sports and Cultural Development<small>Student Council, St. Paul University Quezon City · AY 2022–2024</small></li>
           </ul>
         </div>
         <div>
@@ -1234,9 +1250,10 @@
         <div>
           <h3>Certifications</h3>
           <ul>
+            <li>Tr(AI)ning Grounds — Innovator Masterclass<small>IEEE · Google Developer Group – DLSU</small></li>
             <li>AI on AMD<small>AMD, Apr 2026</small></li>
             <li>Microeconomics Principles<small>University of Illinois Urbana-Champaign, Apr 2026</small></li>
-            <li>Image Processing in Python<small>DataCamp</small></li>
+            <li>Image Processing in Python<small>DataCamp, Mar 2026</small></li>
             <li>Google IT Automation with Python<small>Google, Feb 2025</small></li>
             <li>Foundations of Data Science<small>Google, Feb 2025</small></li>
             <li>Google Data Analytics<small>Google, Feb 2025</small></li>
@@ -1317,7 +1334,7 @@
   <script>
     (function () {
       var D = JSON.parse(document.getElementById('pdata').textContent), P = D.p, O = D.order;
-      P.backlog.shots = [['images/backlog-hero-live-home.png', 'Live Backlog Hero landing page'], ['images/backlog-hero-live-search.png', 'Live Backlog Hero game search page']];
+      P.backlog.shots = [['images/backlog-hero-home-wide.jpg', 'Backlog Hero landing page'], ['images/backlog-hero-search-wide.jpg', 'Search Games tab with trending games']];
       P.retro = {
         title: 'RetroSpec virtual exhibit',
         kind: 'Group project',
@@ -1326,7 +1343,7 @@
         points: ['Explains the evolution of computer graphics from ASCII and early displays to modern real-time rendering', 'Presents an exhibit overview and an immersive timeline spanning the 1960s through the 2020s', 'Uses Astro, React, Three.js, Tailwind CSS and MDX'],
         tech: ['Astro', 'React', 'Three.js', 'Tailwind CSS', 'MDX'],
         repo: 'https://github.com/mysteriouskimsajaang/case-study-project-grp-4-csarch2',
-        shots: [['images/retrospec-exhibit.png', 'Live RetroSpec virtual exhibit homepage']]
+        shots: [['images/retrospec-home-wide.jpg', 'Live RetroSpec virtual exhibit homepage'], ['images/retrospec-timeline.jpg', 'The 3D timeline, flying past the 1980s node']]
       };
       P.catbot = {
         title: 'Catbot reinforcement-learning environment',
@@ -1359,14 +1376,17 @@
       function stop() { if (timer) { clearTimeout(timer); timer = null } }
 
       function showShots() {
-        stop(); var p = P[cur]; stage.innerHTML = ''; thumbs.innerHTML = ''; tctl.hidden = true;
+        stop(); var p = P[cur]; stage.innerHTML = ''; thumbs.innerHTML = ''; tctl.hidden = true; stage.classList.remove('fit-shot');
         var list = p.shots || [];
         if (list.length) {
-          var img = el('img'); img.src = list[shot][0]; img.alt = list[shot][1]; stage.appendChild(img); cap.textContent = list[shot][1];
+          var img = el('img'); img.src = list[shot][0]; img.alt = list[shot][1];
+          stage.classList.add('fit-shot');
+          stage.appendChild(img); cap.textContent = list[shot][1];
           if (list.length > 1) list.forEach(function (s, i) {
             var b = el('button'); b.type = 'button'; b.setAttribute('aria-label', 'Show ' + s[1]);
             if (i === shot) b.setAttribute('aria-current', 'true');
             var t = el('img'); t.src = s[0]; t.alt = ''; b.appendChild(t);
+            b.classList.add('fit-shot');
             b.addEventListener('click', function () { shot = i; showShots() }); thumbs.appendChild(b);
           });
         } else {
