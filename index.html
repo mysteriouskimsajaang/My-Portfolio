@@ -1002,7 +1002,7 @@
       </div>
 
       <article class="feature proj" data-id="backlog">
-        <div class="shot can-open" data-open="backlog"><span class="peek" aria-hidden="true">View gallery</span><img src="images/backlog-hero.jpg"
+        <div class="shot can-open" data-open="backlog"><span class="peek" aria-hidden="true">View gallery</span><img src="images/backlog-hero-live-home.png"
             alt="Backlog Hero dashboard with library stats and trending games" loading="lazy"></div>
         <div>
           <p class="kind">Full-stack web app <span class="state">Completed</span></p>
@@ -1133,11 +1133,11 @@
           <div class="body">
             <p class="kind">Group project <span class="state">Completed</span></p>
             <h3>RetroSpec virtual exhibit</h3>
-            <p class="desc">An interactive web exhibit about the evolution of computer graphics, built as an Astro site with a responsive presentation and visual demonstrations.</p>
-            <ul class="tech" aria-label="Built with"><li>Astro</li><li>JavaScript</li><li>TypeScript</li><li>Tailwind CSS</li></ul>
-            <div class="acts"><a class="btn sm pri" href="https://case-study-project-grp-4-csarch2-e39f.onrender.com/" target="_blank" rel="noopener"><svg aria-hidden="true">
+            <p class="desc">An interactive virtual exhibit about the evolution of computer graphics, created for CSARCH2 and presented as a decade-by-decade timeline with an immersive 3D experience.</p>
+              <ul class="tech" aria-label="Built with"><li>Astro</li><li>React</li><li>Three.js</li><li>Tailwind CSS</li><li>MDX</li></ul>
+            <div class="acts"><a class="btn sm pri" href="https://mysteriouskimsajaang.github.io/case-study-project-grp-4-csarch2/" target="_blank" rel="noopener"><svg aria-hidden="true">
                   <use href="#i-play" />
-                </svg>Open exhibit</a><a class="src" href="https://github.com/mysteriouskimsajaang/virtual-exhibit-template" target="_blank" rel="noopener"><svg aria-hidden="true">
+                </svg>Open exhibit</a><a class="src" href="https://github.com/mysteriouskimsajaang/case-study-project-grp-4-csarch2" target="_blank" rel="noopener"><svg aria-hidden="true">
                   <use href="#i-gh" />
                 </svg>View source</a><div class="btns"><button class="btn sm" type="button" data-open="retro">Details</button></div></div>
           </div>
@@ -1317,15 +1317,16 @@
   <script>
     (function () {
       var D = JSON.parse(document.getElementById('pdata').textContent), P = D.p, O = D.order;
+      P.backlog.shots = [['images/backlog-hero-live-home.png', 'Live Backlog Hero landing page'], ['images/backlog-hero-live-search.png', 'Live Backlog Hero game search page']];
       P.retro = {
         title: 'RetroSpec virtual exhibit',
         kind: 'Group project',
         status: 'Completed',
-        desc: 'An interactive web exhibit about the evolution of computer graphics, built as an Astro site with a responsive presentation and visual demonstrations.',
-        points: ['Explains the evolution of computer graphics from ASCII and early displays to modern real-time rendering', 'Presents research and visual examples in an interactive web experience', 'Uses Astro, JavaScript, TypeScript and Tailwind CSS for the site'],
-        tech: ['Astro', 'JavaScript', 'TypeScript', 'Tailwind CSS'],
-        repo: 'https://github.com/mysteriouskimsajaang/virtual-exhibit-template',
-        shots: [['images/retrospec-exhibit.png', 'RetroSpec virtual exhibit homepage']]
+        desc: 'An interactive virtual exhibit about the evolution of computer graphics, created for CSARCH2 and presented as a decade-by-decade timeline with an immersive 3D experience.',
+        points: ['Explains the evolution of computer graphics from ASCII and early displays to modern real-time rendering', 'Presents an exhibit overview and an immersive timeline spanning the 1960s through the 2020s', 'Uses Astro, React, Three.js, Tailwind CSS and MDX'],
+        tech: ['Astro', 'React', 'Three.js', 'Tailwind CSS', 'MDX'],
+        repo: 'https://github.com/mysteriouskimsajaang/case-study-project-grp-4-csarch2',
+        shots: [['images/retrospec-exhibit.png', 'Live RetroSpec virtual exhibit homepage']]
       };
       P.catbot = {
         title: 'Catbot reinforcement-learning environment',
