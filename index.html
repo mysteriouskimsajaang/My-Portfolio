@@ -143,29 +143,19 @@
     /* ---------- hero ---------- */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 19rem;
-      gap: 4rem;
+      grid-template-columns: minmax(0, 1fr) 14rem;
+      gap: 3.5rem;
       align-items: end;
       padding: 5.5rem 0 4rem;
       border-bottom: 1px solid var(--line)
     }
 
     .status {
-      display: inline-flex;
-      align-items: center;
-      gap: .55rem;
-      font-size: .9rem;
+      display: inline-block;
+      font-size: .88rem;
       font-weight: 500;
-      color: var(--mut)
-    }
-
-    .status::before {
-      content: "";
-      width: .55rem;
-      height: .55rem;
-      border-radius: 50%;
-      background: var(--ok);
-      box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent)
+      color: var(--mut);
+      letter-spacing: .02em
     }
 
     h1 {
@@ -188,7 +178,7 @@
 
     .row { display: flex; flex-wrap: wrap; gap: .65rem }
 
-    .portrait { margin: 0 }
+    .portrait { margin: 0; max-width: 14rem }
 
     .portrait img {
       width: 100%;
@@ -203,9 +193,9 @@
     .portrait figcaption {
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
-      margin-top: .8rem;
-      font-size: .88rem;
+      gap: .5rem;
+      margin-top: .75rem;
+      font-size: .82rem;
       color: var(--mut)
     }
 
@@ -839,35 +829,213 @@
 
     .tctl[hidden], .tabs[hidden] { display: none }
 
-    .os-demo { position: absolute; inset: 0; overflow: hidden; color: #eef3ff; background: linear-gradient(135deg, #17335d, #0d1729 68%, #122b44); font: .78rem/1.35 "Segoe UI", sans-serif }
-    .os-demo .os-icons { display: flex; gap: 1rem; padding: 1rem }
-    .os-demo .os-icon { width: 4.5rem; padding: .35rem; border: 0; color: inherit; background: transparent; cursor: pointer; text-align: center }
-    .os-demo .os-icon:hover { background: rgba(255,255,255,.14); border-radius: 4px }
-    .os-demo .os-icon span { display: block; margin-top: .3rem; font-size: .68rem }
-    .os-demo .os-glyph { display: grid; place-items: center; height: 2rem; font-size: 1.45rem }
-    .os-demo .os-window { position: absolute; top: 4rem; left: 8rem; width: min(78%, 24rem); border: 1px solid #597394; background: #19263a; box-shadow: 0 12px 25px rgba(0,0,0,.4) }
-    .os-demo .os-title { display: flex; justify-content: space-between; padding: .45rem .6rem; background: #263d5a; font-weight: 600 }
-    .os-demo .os-close { border: 0; color: inherit; background: transparent; cursor: pointer }
-    .os-demo .os-content { padding: .8rem; min-height: 8rem }
-    .os-demo .os-content button { display: block; width: 100%; margin: .35rem 0; padding: .4rem; border: 1px solid #57718f; color: inherit; background: #294361; cursor: pointer; text-align: left }
-    .os-demo .os-content button:hover { background: #35618b }
-    .os-demo .os-taskbar { position: absolute; right: 0; bottom: 0; left: 0; display: flex; justify-content: space-between; padding: .45rem .65rem; background: rgba(10,18,31,.88) }
-    .os-demo .os-taskbar button { border: 0; color: inherit; background: transparent; cursor: pointer }
-    .cat-demo { position: absolute; inset: 0; display: grid; place-items: center; padding: 1rem; color: #eef7e8; background: #19300f; font: .78rem/1.35 "Segoe UI", sans-serif }
-    .cat-demo .cat-board { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); width: min(100%, 28rem); aspect-ratio: 1; border: 2px solid #6b9b52; background: #19300f }
-    .cat-demo .cat-cell { position: relative; display: grid; place-items: center; min-width: 0; border: 1px solid rgba(139, 190, 103, .16); background: #233f15 }
-    .cat-demo .cat-cell:nth-child(even) { background: #19300f }
-    .cat-demo .cat-cell img { width: 82%; height: 82%; object-fit: contain }
-    .cat-demo .cat-controls { position: absolute; right: 1rem; bottom: .7rem; left: 1rem; display: flex; justify-content: space-between; align-items: center; gap: .75rem }
-    .cat-demo .cat-controls button { border: 1px solid #6b9b52; border-radius: 5px; padding: .35rem .55rem; color: inherit; background: #2b511c; cursor: pointer }
-    .cat-demo .cat-controls button:hover { background: #376b23 }
-    .cat-demo .cat-status { position: absolute; top: .7rem; left: 1rem; padding: .3rem .5rem; border-radius: 4px; background: rgba(15, 30, 10, .8) }
+    .stage:has(.cat-demo) { aspect-ratio: 16/11; min-height: 23rem }
 
-    .os-cover { position: absolute; inset: 0; overflow: hidden; background: #101c31 }
-    .os-cover > img { width: 100%; height: 100%; object-fit: cover; }
-    .os-cover::after { content: "CSOPESY Desktop OS Emulator"; position: absolute; right: .7rem; bottom: .55rem; padding: .3rem .5rem; border: 1px solid rgba(255,255,255,.25); border-radius: 4px; color: #eef3ff; background: rgba(8,15,28,.72); font: 600 .68rem "Segoe UI", sans-serif; }
-    .os-cover-icons { position: absolute; top: .7rem; left: .7rem; display: flex; gap: .55rem; }
-    .os-cover-icons img { width: 2rem; height: 2rem; padding: .25rem; border-radius: 5px; background: rgba(8,15,28,.6); }
+    .cat-demo {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 1.1rem;
+      padding: .85rem;
+      color: #eef7e8;
+      background: #0f1c0b;
+      font: .78rem/1.35 "Segoe UI", system-ui, sans-serif;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .cat-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      flex: none;
+    }
+
+    .cat-board {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      width: 17rem;
+      height: 17rem;
+      border: 2px solid #558739;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #15260f;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .4);
+    }
+
+    .cat-cell {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-width: 0;
+      border: 1px solid rgba(139, 190, 103, .12);
+      background: #1b3113;
+      transition: background-color .15s ease;
+    }
+
+    .cat-cell:nth-child(even) { background: #13240e }
+    .cat-cell.danger { background: rgba(230, 60, 60, .22); border-color: rgba(230, 60, 60, .35) }
+    .cat-cell.trail { background: rgba(87, 199, 143, .18) }
+    .cat-cell.goal { background: rgba(240, 190, 40, .28); border-color: #f0be28; box-shadow: inset 0 0 8px rgba(240, 190, 40, .4) }
+    .cat-cell img { width: 84%; height: 84%; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,.5)) }
+    .cat-cell .goal-badge { font-size: 1.15rem; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)) }
+
+    .cat-legend {
+      display: flex;
+      gap: .75rem;
+      font-size: .7rem;
+      color: #9cb890;
+      align-items: center;
+    }
+
+    .cat-legend span { display: inline-flex; align-items: center; gap: .25rem }
+    .cat-legend img { width: .95rem; height: .95rem; object-fit: contain }
+
+    .cat-sidebar {
+      flex: 1;
+      min-width: 13rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: .55rem;
+      background: rgba(0, 0, 0, .22);
+      border: 1px solid rgba(139, 190, 103, .2);
+      border-radius: 8px;
+      padding: .75rem;
+      box-sizing: border-box;
+    }
+
+    .cat-hud-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .5rem;
+      padding-bottom: .35rem;
+      border-bottom: 1px solid rgba(139, 190, 103, .2);
+    }
+
+    .cat-hud-title {
+      font-weight: 700;
+      font-size: .84rem;
+      color: #bbf29b;
+      letter-spacing: .02em;
+    }
+
+    .cat-phase {
+      padding: .15rem .45rem;
+      border-radius: 4px;
+      font-size: .68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .cat-phase.exploring { background: rgba(240, 120, 40, .2); color: #ffa86b; border: 1px solid rgba(240, 120, 40, .4) }
+    .cat-phase.learning { background: rgba(240, 200, 40, .2); color: #ffd86b; border: 1px solid rgba(240, 200, 40, .4) }
+    .cat-phase.trained { background: rgba(87, 199, 143, .2); color: #78e8aa; border: 1px solid rgba(87, 199, 143, .4) }
+
+    .cat-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .35rem;
+    }
+
+    .cat-stat {
+      background: rgba(18, 32, 12, .6);
+      border: 1px solid rgba(139, 190, 103, .12);
+      border-radius: 5px;
+      padding: .3rem .45rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cat-stat .lbl { font-size: .62rem; color: #87a77b; text-transform: uppercase; letter-spacing: .03em }
+    .cat-stat .val { font-size: .92rem; font-weight: 700; color: #f0faeb; font-variant-numeric: tabular-nums }
+
+    .cat-eps-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+    }
+
+    .cat-eps-row { display: flex; justify-content: space-between; font-size: .68rem; color: #87a77b }
+    .cat-eps-bar { height: 4px; background: rgba(255, 255, 255, .1); border-radius: 2px; overflow: hidden }
+    .cat-eps-fill { height: 100%; background: linear-gradient(90deg, #57c78f, #e08a4f); transition: width .2s }
+
+    .cat-log {
+      background: rgba(8, 16, 6, .7);
+      border-left: 3px solid #57c78f;
+      border-radius: 0 4px 4px 0;
+      padding: .35rem .55rem;
+      font-size: .72rem;
+      color: #cde7c2;
+      min-height: 2.1rem;
+      display: flex;
+      align-items: center;
+      line-height: 1.3;
+    }
+
+    .cat-controls-box {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      border-top: 1px solid rgba(139, 190, 103, .2);
+      padding-top: .45rem;
+    }
+
+    .cat-btn-row {
+      display: flex;
+      gap: .35rem;
+    }
+
+    .cat-btn {
+      flex: 1;
+      border: 1px solid #558739;
+      border-radius: 4px;
+      padding: .3rem .4rem;
+      color: inherit;
+      background: #234316;
+      font-size: .72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .25rem;
+    }
+
+    .cat-btn:hover { background: #2f5a1e; border-color: #72b24e }
+    .cat-btn.pri { background: #336b1d; border-color: #6ebd3e; color: #f5fff0 }
+    .cat-btn.pri:hover { background: #3f8324 }
+
+    .cat-opt-row {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .68rem;
+      color: #9cb890;
+    }
+
+    .cat-opt-lbl { flex: none }
+
+    .cat-pill {
+      border: 1px solid rgba(139, 190, 103, .25);
+      border-radius: 3px;
+      padding: .15rem .35rem;
+      background: rgba(25, 45, 17, .6);
+      color: #cbe6bf;
+      cursor: pointer;
+      font-size: .66rem;
+      transition: all .15s;
+    }
+
+    .cat-pill:hover { background: rgba(45, 80, 30, .8); color: #fff }
+    .cat-pill.active { background: #438128; border-color: #7ad14f; color: #fff; font-weight: 600 }
 
     .vinfo { padding: 1.5rem 1.5rem 1.75rem }
 
@@ -916,7 +1084,7 @@
     /* ---------- responsive ---------- */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 3.5rem }
-      .portrait { max-width: 18rem }
+      .portrait { max-width: 14rem }
       .feature, .feature.flip { grid-template-columns: 1fr; gap: 1.5rem }
       .feature.flip .shot { order: 0 }
       .grid { grid-template-columns: 1fr }
@@ -933,6 +1101,10 @@
       section { padding-top: 4.5rem }
       .skills div { grid-template-columns: 1fr; gap: .2rem }
       .stage:has(.term) { aspect-ratio: 4/5 }
+      .stage:has(.cat-demo) { aspect-ratio: auto; min-height: 33rem }
+      .cat-demo { flex-direction: column; overflow-y: auto }
+      .cat-board { width: 14rem; height: 14rem }
+      .cat-sidebar { min-width: auto; width: 100% }
     }
   </style>
 </head>
@@ -1012,21 +1184,20 @@
         </div>
       </article>
 
-      <article class="feature flip proj" data-id="sched">
-        <div class="shot can-open fit-shot" data-open="sched" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/process-scheduler.jpg"
-            alt="Process Scheduler CLI running round-robin scheduling across 4 CPU cores" loading="lazy"></div>
+      <article class="feature flip proj" data-id="mi2">
+        <div class="shot can-open fit-shot" data-open="mi2"><span class="peek" aria-hidden="true">View gallery</span><img src="images/mi2-home.png"
+            alt="MI-II Shop homepage featuring two-way radios and accessories" loading="lazy"></div>
         <div>
-          <p class="kind">Group of 4, operating systems <span class="state">Completed</span></p>
-          <h3>Process Scheduler CLI</h3>
-          <p class="desc">A command-line CPU scheduler that simulates processes across multiple cores using FCFS and
-          Round Robin, with configurable workloads, attachable process screens, and CPU utilization reports.</p>
+          <p class="kind">E-commerce web app <span class="state">Completed</span></p>
+          <h3>MI-II Shop, two-way radio supply</h3>
+          <p class="desc">An e-commerce storefront and product catalog for a two-way radio and communications equipment supplier, featuring band and category filtering, in-stock search, radio specifications, quote requests, and an order inquiry system.</p>
           <ul class="tech" aria-label="Built with">
-            <li>C++17</li><li>Multithreading</li><li>CMake</li>
+            <li>JavaScript</li><li>Node.js</li><li>Express</li><li>HTML5</li><li>CSS3</li>
           </ul>
-          <div class="acts"><a class="src" href="https://github.com/mysteriouskimsajaang/Process-Scheduler-CLI" target="_blank"
+          <div class="acts"><a class="src" href="https://github.com/mysteriouskimsajaang/MI-II-Shop" target="_blank"
             rel="noopener"><svg aria-hidden="true">
               <use href="#i-gh" />
-            </svg>View source on GitHub</a><div class="btns"><button class="btn sm pri" type="button" data-open="sched" data-mode="demo"><svg class="play" aria-hidden="true"><use href="#i-play" /></svg>Try me</button><button class="btn sm" type="button" data-open="sched">Details</button></div></div>
+            </svg>View source on GitHub</a><div class="btns"><button class="btn sm" type="button" data-open="mi2">Details</button></div></div>
         </div>
       </article>
 
@@ -1068,56 +1239,6 @@
           </div>
         </article>
 
-        <article class="card proj" data-id="payroll">
-          <div class="shot can-open fit-shot" data-open="payroll" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/payroll.jpg"
-              alt="Payroll Computation in C showing a computed payslip with SSS, PhilHealth and PAG-IBIG deductions"
-              loading="lazy"></div>
-          <div class="body">
-            <p class="kind">Personal project <span class="state">Completed</span></p>
-            <h3>Payroll computation in C</h3>
-            <p class="desc">A console payroll system that calculates gross pay, SSS, PhilHealth and PAG-IBIG
-              deductions, withholding tax and net pay, then prints a payslip.</p>
-            <ul class="tech" aria-label="Built with"><li>C</li></ul>
-            <div class="acts"><a class="src"
-                href="https://github.com/mysteriouskimsajaang/Payroll-Computation-in-C" target="_blank"
-                rel="noopener"><svg aria-hidden="true">
-                  <use href="#i-gh" />
-                </svg>View source</a><div class="btns"><button class="btn sm pri" type="button" data-open="payroll" data-mode="demo"><svg class="play" aria-hidden="true"><use href="#i-play" /></svg>Try me</button><button class="btn sm" type="button" data-open="payroll">Details</button></div></div>
-          </div>
-        </article>
-
-        <article class="card proj" data-id="food">
-          <div class="shot can-open fit-shot" data-open="food" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><img src="images/food-log.jpg"
-              alt="Food Log and Recipe Manager listing saved food logs in the console" loading="lazy"></div>
-          <div class="body">
-            <p class="kind">Personal project <span class="state">Completed</span></p>
-            <h3>Food log and recipe manager</h3>
-            <p class="desc">A C-based food log and recipe manager with user accounts, file import/export, structured
-              ingredient and preparation data, and robust input validation.</p>
-            <ul class="tech" aria-label="Built with"><li>C</li><li>File I/O</li></ul>
-            <div class="acts"><a class="src" href="https://github.com/mysteriouskimsajaang/Food-Log-using-C-"
-                target="_blank" rel="noopener"><svg aria-hidden="true">
-                  <use href="#i-gh" />
-                </svg>View source</a><div class="btns"><button class="btn sm pri" type="button" data-open="food" data-mode="demo"><svg class="play" aria-hidden="true"><use href="#i-play" /></svg>Try me</button><button class="btn sm" type="button" data-open="food">Details</button></div></div>
-          </div>
-        </article>
-
-        <article class="card proj" data-id="os">
-          <div class="shot can-open" data-open="os" data-mode="demo"><span class="peek" aria-hidden="true">Try me</span><div class="os-cover" aria-label="Desktop-style OS emulator preview"><img src="images/os-wallpaper.png" alt="OS emulator wallpaper" loading="lazy"><div class="os-cover-icons" aria-hidden="true"><img src="images/os-folder.png" alt=""><img src="images/os-sysinfo.png" alt=""><img src="images/os-taskmgr.png" alt=""></div></div>
-          </div>
-          <div class="body">
-            <p class="kind">Group of 4 <span class="state">Completed</span></p>
-            <h3>Desktop-style OS emulator</h3>
-            <p class="desc">A Windows desktop operating system simulator with a custom graphical shell, window
-              manager, File Explorer, System Information, and real-time Task Manager.</p>
-            <ul class="tech" aria-label="Built with"><li>C++</li><li>Dear ImGui</li><li>OpenGL</li></ul>
-            <div class="acts"><a class="src" href="https://github.com/kimsajaang/OS_EMULATOR" target="_blank"
-                rel="noopener"><svg aria-hidden="true">
-                  <use href="#i-gh" />
-                </svg>View source</a><div class="btns"><button class="btn sm pri" type="button" data-open="os" data-mode="demo"><svg class="play" aria-hidden="true"><use href="#i-play" /></svg>Try me</button><button class="btn sm" type="button" data-open="os">Details</button></div></div>
-          </div>
-        </article>
-
         <article class="card proj" data-id="retro">
           <div class="shot can-open fit-shot" data-open="retro"><span class="peek" aria-hidden="true">View gallery</span><img src="images/retrospec-home-wide.jpg" alt="RetroSpec virtual exhibit homepage showing the evolution of computer graphics" loading="lazy"></div>
           <div class="body">
@@ -1142,7 +1263,7 @@
             <ul class="tech" aria-label="Built with"><li>Python</li><li>Gymnasium</li><li>Pygame</li><li>NumPy</li></ul>
             <div class="acts"><a class="src" href="https://github.com/mysteriouskimsajaang/CSINTSY-Catbot-Group95" target="_blank" rel="noopener"><svg aria-hidden="true">
                   <use href="#i-gh" />
-                </svg>View source</a><div class="btns"><button class="btn sm pri" type="button" data-open="catbot" data-mode="demo"><svg class="play" aria-hidden="true"><use href="#i-play" /></svg>Try simulation</button><button class="btn sm" type="button" data-open="catbot">Details</button></div></div>
+                </svg>View source</a><div class="btns"><button class="btn sm pri" type="button" data-open="catbot" data-mode="demo"><svg class="play" aria-hidden="true"><use href="#i-play" /></svg>Watch RL training</button><button class="btn sm" type="button" data-open="catbot">Details</button></div></div>
           </div>
         </article>
 
@@ -1265,7 +1386,7 @@
       </div>
     </div>
   </div>
-  <script type="application/json" id="pdata">{"order": ["backlog", "sched", "cuda", "rag", "payroll", "food", "os"], "p": {"backlog": {"title": "Backlog Hero, a game library tracker", "kind": "Full-stack web app", "status": "Completed", "desc": "A social game tracker for planning what to play next. I built both the front end and the back end.", "points": ["Track every game you own as Backlog, Playing or Completed, with ratings and reviews", "Search a large game catalog through the IGDB API", "Sign in with Steam or Google, or with a username and a bcrypt-hashed password", "Community posts with comments, friends, an activity feed and achievements", "Express server with Mongoose models for users, games, library entries, posts and feedback"], "tech": ["Node.js", "Express", "MongoDB", "Mongoose", "Handlebars", "Passport"], "repo": "https://github.com/mysteriouskimsajaang/App-Tracker", "shots": [["images/backlog-hero.jpg", "Dashboard after signing in"], ["images/backlog-hero-home.jpg", "Landing page"], ["images/backlog-hero-library.jpg", "My Collection, filtered by status"], ["images/backlog-hero-community.jpg", "Community posts"]]}, "sched": {"title": "Process Scheduler CLI", "kind": "Group of 4, operating systems", "status": "Completed", "desc": "A command-line emulator that schedules simulated processes across multiple CPU cores.", "points": ["FCFS and Round Robin scheduling with a configurable time quantum", "CPU count, algorithm and instruction ranges are read from config.txt", "Processes run generated instructions: PRINT, DECLARE, ADD, SUBTRACT, SLEEP and FOR", "Attach to a process with screen -s / -r and inspect its logs with process-smi", "report-util writes CPU utilization and process summaries to csopesy-log.txt; unit and CLI smoke tests included"], "tech": ["C++17", "std::thread", "CMake"], "repo": "https://github.com/mysteriouskimsajaang/Process-Scheduler-CLI", "shots": [["images/process-scheduler.jpg", "screen -ls listing running and finished processes"]], "demo": [{"o": "   ______ _____ ____  ____  ________________  \n  / ____// ___// __ \\/ __ \\/ ____/ ___/\\ \\/ / \n / /     \\__ \\/ / / / /_/ / __/  \\__ \\  \\  /  \n/ /___  ___/ / /_/ / ____/ /___ ___/ /  / /   \n\\____/ /____/\\____/_/   /_____//____/  /_/    \n\nHello, Welcome to our CPU Scheduler and CLI Emulator!\nType 'exit' to quit, 'clear' to clear the screen\n\n** IMPORTANT: Type 'initialize' to load config and start system **\n\nCommands:\n  initialize             Load scheduler configuration from config.txt\n  screen -s <name>       Create and attach to a process\n  screen -r <name>       Reattach to a live process\n  screen -ls             Show CPU utilization and all processes\n  scheduler-start        Begin periodic dummy-process generation\n  scheduler-stop         Stop generating new dummy processes\n  report-util            Write csopesy-log.txt (includes finished processes)\n  exit                   Quit the emulator\nroot:\\> ", "clear": true}, {"i": "initialize"}, {"o": "Initialized 4 CPU(s), round robin scheduler. (20 ms per simulated CPU tick)\nroot:\\> "}, {"i": "screen -s demo"}, {"o": "Attached to 'demo'. Type process-smi to refresh, exit to detach.\n\nProcess name: demo\nID: 1\nStatus: READY\nLogs:\n  (No PRINT instructions executed yet.)\nCurrent instruction line: 0\nLines of code: 22\nscreen:demo> ", "clear": true}, {"i": "process-smi"}, {"o": "Process name: demo\nID: 1\nStatus: FINISHED\nLogs:\n(11/03/2026 12:39:11AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\n(11/03/2026 12:39:12AM) Core: 0 \"Hello world from demo!\"\nFinished!\nscreen:demo> "}, {"i": "exit"}, {"o": "   ______ _____ ____  ____  ________________  \n  / ____// ___// __ \\/ __ \\/ ____/ ___/\\ \\/ / \n / /     \\__ \\/ / / / /_/ / __/  \\__ \\  \\  /  \n/ /___  ___/ / /_/ / ____/ /___ ___/ /  / /   \n\\____/ /____/\\____/_/   /_____//____/  /_/    \n\nHello, Welcome to our CPU Scheduler and CLI Emulator!\nType 'exit' to quit, 'clear' to clear the screen\n\n** IMPORTANT: Type 'initialize' to load config and start system **\n\nCommands:\n  initialize             Load scheduler configuration from config.txt\n  screen -s <name>       Create and attach to a process\n  screen -r <name>       Reattach to a live process\n  screen -ls             Show CPU utilization and all processes\n  scheduler-start        Begin periodic dummy-process generation\n  scheduler-stop         Stop generating new dummy processes\n  report-util            Write csopesy-log.txt (includes finished processes)\n  exit                   Quit the emulator\nroot:\\> ", "clear": true}, {"i": "scheduler-start"}, {"o": "Scheduler process generation started.\nroot:\\> "}, {"i": "screen -ls"}, {"o": "CPU utilization: 25.0%\nCores used: 1\nCores available: 3\nCPU tick: 201\nProcess generator: ON\n-----------------------------------------------\nRunning processes:\np10                (11/03/2026 12:39:15AM)  SLEEPING   Core: -  9 / 23\np11                (11/03/2026 12:39:15AM)  RUNNING    Core: 1  1 / 15\n\nFinished processes:\ndemo               (11/03/2026 12:39:11AM)  Finished  22 / 22\np1                 (11/03/2026 12:39:13AM)  Finished  13 / 13\np2                 (11/03/2026 12:39:13AM)  Finished  21 / 21\np3                 (11/03/2026 12:39:13AM)  Finished  13 / 13\np4                 (11/03/2026 12:39:14AM)  Finished  16 / 16\np5                 (11/03/2026 12:39:14AM)  Finished  16 / 16\np6                 (11/03/2026 12:39:14AM)  Finished  18 / 18\np7                 (11/03/2026 12:39:14AM)  Finished  13 / 13\np8                 (11/03/2026 12:39:14AM)  Finished  15 / 15\np9                 (11/03/2026 12:39:15AM)  Finished  17 / 17\n-----------------------------------------------\nroot:\\> "}, {"i": "scheduler-stop"}, {"o": "Scheduler process generation stopped; existing processes continue.\nroot:\\> "}, {"i": "report-util"}, {"o": "Report generated at csopesy-log.txt\nroot:\\> "}], "exe": "csopesy.exe"}, "cuda": {"title": "CPU vs. GPU terrain generation with CUDA", "kind": "Group of 4", "status": "In progress", "desc": "Perlin-noise heightmap generation benchmarked across CPU and NVIDIA GPU implementations to measure when CUDA outperforms sequential C++.", "tech": ["CUDA", "C/C++"], "repo": "https://github.com/mysteriouskimsajaang/CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-", "ph": "CUDA", "og": "https://opengraph.githubassets.com/1/mysteriouskimsajaang/CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-"}, "rag": {"title": "Offline RAG study assistant", "kind": "Personal project", "status": "Completed", "desc": "A private PDF question-answering app. Documents, embeddings and answers never leave your computer.", "points": ["PDFs are split into 700-character chunks with 100 characters of overlap", "Embeddings from nomic-embed-text are stored in a local Chroma vector database", "Answers come from llama3.2 through Ollama, using only the retrieved passages, with the source pages shown", "Optional BM25 hybrid search and FlashRank re-ranking for better accuracy", "Packaged with Docker Compose for one-command setup"], "tech": ["Python", "LangChain", "Ollama", "ChromaDB", "Streamlit", "Docker"], "repo": "https://github.com/mysteriouskimsajaang/Retrieval-Augmented-Generation", "shots": [["images/rag.jpg", "Upload screen with local model settings"]]}, "payroll": {"title": "Payroll computation in C", "kind": "Personal project", "status": "Completed", "desc": "A console payroll system that turns wage and attendance details into a payslip.", "points": ["Menu flow: add details, add attendance, then compute salary", "Daily or hourly wages", "SSS 4.5%, PhilHealth 5%, Pag-IBIG 2% capped at ₱200, and 15% tax on the excess over ₱21,500", "Optional loan deduction and input validation on every prompt"], "tech": ["C"], "repo": "https://github.com/mysteriouskimsajaang/Payroll-Computation-in-C", "shots": [["images/payroll.jpg", "Computed payslip"]], "demo": [{"o": "Welcome to Payslip Computation!\n[D / d] Add my Details\n[A / a] Add my Attendance\n[E / e] Compute my Salary\n[X / x] Exit\n\nAnswer: ", "clear": true}, {"i": "d"}, {"o": "Enter your full name: "}, {"i": "Juan Dela Cruz"}, {"o": "Enter wage type [D]aily or [H]ourly: "}, {"i": "D"}, {"o": "Enter wage rate: "}, {"i": "850"}, {"o": "Welcome to Payslip Computation!\n[D / d] Add my Details\n[A / a] Add my Attendance\n[E / e] Compute my Salary\n[X / x] Exit\n\nAnswer: ", "clear": true}, {"i": "a"}, {"o": "Months:\n[1] January\n[2] February\n[3] March\n[4] April\n[5] May\n[6] June\n[7] July\n[8] August\n[9] September\n[10] October\n[11] November\n[12] December\nEnter the month number: "}, {"i": "10"}, {"o": "Enter the year: "}, {"i": "2026"}, {"o": "Enter total days present: "}, {"i": "22"}, {"o": "Enter total absences: "}, {"i": "0"}, {"o": "Welcome to Payslip Computation!\n[D / d] Add my Details\n[A / a] Add my Attendance\n[E / e] Compute my Salary\n[X / x] Exit\n\nAnswer: ", "clear": true}, {"i": "e"}, {"o": "Juan Dela Cruz\nTotal Number of Days Present: 22\nTotal Number of Days Absent: 0\n\nDo you have a current loan [Y]es or [N]o: ", "clear": true}, {"i": "N"}, {"o": "\nBasic Pay: 18700.00\nLoan: 0.00\nGross Pay: 18700.00\n\nSSS Contribution: 841.50\nPhilHealth Contribution: 935.00\nPAG-IBIG Contribution: 200.00\nTax (15% excess above 21,500): 0.00\nTotal Deductions: 1976.50\nNet Pay: 16723.50\n\nDo you want to compute another salary? [Y]es or [N]o: "}], "exe": "Payroll Computation.exe"}, "food": {"title": "Food log and recipe manager", "kind": "Personal project", "status": "Completed", "desc": "A console app for logging the food you try and keeping your own recipes.", "points": ["Register and log in with validated username, password, email and mobile number", "Up to 50 food logs and 20 recipes per user, saved to files", "Add, modify, delete and search food logs and recipes", "Top 5 most-eaten foods, top 3 quickest recipes, and import and export"], "tech": ["C", "File I/O"], "repo": "https://github.com/mysteriouskimsajaang/Food-Log-using-C-", "shots": [["images/food-log.jpg", "All food logs for a user"]], "demo": [{"o": "Welcome to the Food Log and Recipe Manager!\n1. Register\n2. Login\nEnter your choice: ", "clear": true}, {"i": "1"}, {"o": "Let's set you up.\nEnter username (8-50 alphanumeric characters): ", "clear": true}, {"i": "kanejoshua"}, {"o": "Enter password (8-20 chars, must include uppercase, lowercase, number, special char): "}, {"i": "Passw0rd!"}, {"o": "Enter full name (5-80 alphabetic characters): "}, {"i": "Kane Joshua Ibanez"}, {"o": "Enter email address (max 30 chars): "}, {"i": "kane@dlsu.edu.ph"}, {"o": "Enter mobile number (11 digits, starts with 0): "}, {"i": "09171234567"}, {"o": "You’re in! Registered as kanejoshua.\n"}, {"o": "What's up, kanejoshua?\n1. Add Food Log\n2. Add Recipe\n3. Modify Food Log or Recipe\n4. Delete Food Log or Recipe\n5. Display User Profile\n6. Display All Food Logs and Recipes\n7. Search Food Log or Recipe\n8. Export Data\n9. Import Data\n10. Display Top 5 Most Eaten Food Logs\n11. Display Top 3 Recipes with Shortest Time\n12. Exit\nEnter your choice: ", "clear": true}, {"i": ""}, {"i": "1"}, {"o": "Enter Food Name (3-50 alphanumeric characters, spaces allowed): ", "clear": true}, {"i": "Chicken Adobo"}, {"o": "Enter Food Type (a=appetizer, m=main course, d=dessert): "}, {"i": "m"}, {"o": "Enter Times Eaten (positive number): "}, {"i": "12"}, {"o": "Enter Date First Tried:\n\nEnter the month (1-12): "}, {"i": "3"}, {"o": "Enter the year (yyyy): "}, {"i": "2019"}, {"o": "Enter the day (1-31): "}, {"i": "14"}, {"o": "Enter Location First Tried (max 30 characters): Enter Location First Tried (max 30 characters): "}, {"i": "Lolas Kitchen Manila"}, {"o": "Enter Description (max 300 characters): "}, {"i": "Braised in soy sauce, vinegar, garlic and bay leaves. Comfort food."}, {"o": "\nFood Log Saved Successfully!\nFood Name: Chicken Adobo\nFood Type: m\nTimes Eaten: 12\nDate First Tried: 03/14/2019\nLocation: Lolas Kitchen Manila\nDescription: Braised in soy sauce, vinegar, garlic and bay leaves. Comfort food.\n\nPress Enter to continue..."}, {"i": ""}, {"o": "What's up, kanejoshua?\n1. Add Food Log\n2. Add Recipe\n3. Modify Food Log or Recipe\n4. Delete Food Log or Recipe\n5. Display User Profile\n6. Display All Food Logs and Recipes\n7. Search Food Log or Recipe\n8. Export Data\n9. Import Data\n10. Display Top 5 Most Eaten Food Logs\n11. Display Top 3 Recipes with Shortest Time\n12. Exit\nEnter your choice: ", "clear": true}, {"i": "6"}, {"o": "All Food Logs:\n\nFood Log 1:\nFood Type: Main Course\nFood Name: Chicken Adobo\nTimes Eaten: 12\nDate First Tried: 03/14/2019\nLocation First Tried: Lolas Kitchen Manila\nDescription: Braised in soy sauce, vinegar, garlic and bay leaves. Comfort food.\n\nPress Enter to continue...", "clear": true}], "exe": "Food Log.exe"}, "os": {"title": "Desktop-style OS emulator", "kind": "Group of 4", "status": "Completed", "desc": "A desktop-style operating system mock-up for Windows with a graphical shell and a task manager.", "tech": ["C++", "Dear ImGui", "OpenGL"], "repo": "https://github.com/kimsajaang/OS_EMULATOR", "ph": "OS", "og": "https://opengraph.githubassets.com/1/kimsajaang/OS_EMULATOR"}}}</script>
+  <script type="application/json" id="pdata">{"order": ["backlog", "mi2", "cuda", "rag"], "p": {"backlog": {"title": "Backlog Hero, a game library tracker", "kind": "Full-stack web app", "status": "Completed", "desc": "A social game tracker for planning what to play next. I built both the front end and the back end.", "points": ["Track every game you own as Backlog, Playing or Completed, with ratings and reviews", "Search a large game catalog through the IGDB API", "Sign in with Steam or Google, or with a username and a bcrypt-hashed password", "Community posts with comments, friends, an activity feed and achievements", "Express server with Mongoose models for users, games, library entries, posts and feedback"], "tech": ["Node.js", "Express", "MongoDB", "Mongoose", "Handlebars", "Passport"], "repo": "https://github.com/mysteriouskimsajaang/App-Tracker", "shots": [["images/backlog-hero.jpg", "Dashboard after signing in"], ["images/backlog-hero-home.jpg", "Landing page"], ["images/backlog-hero-library.jpg", "My Collection, filtered by status"], ["images/backlog-hero-community.jpg", "Community posts"]]}, "mi2": {"title": "MI-II Shop, two-way radio supply", "kind": "E-commerce web app", "status": "Completed", "desc": "An e-commerce storefront and product catalog for a two-way radio and communications equipment supplier, featuring band and category filtering, in-stock search, radio specifications, quote requests, and an order inquiry system.", "points": ["Filterable product catalog supporting band (VHF, UHF, Dual, 4G/LTE), equipment category, and in-stock status", "Detailed product listings with technical specifications for handheld transceivers, base stations, and accessories", "Interactive shopping cart and inquiry workflow for custom radio frequency programming and bulk commercial orders", "Multi-channel seller links connecting website inquiries with Shopee and Lazada storefronts"], "tech": ["JavaScript", "Node.js", "Express", "HTML5", "CSS3"], "repo": "https://github.com/mysteriouskimsajaang/MI-II-Shop", "shots": [["images/mi2-home.png", "MI-II Shop homepage and featured handheld radios"], ["images/mi2-products.png", "Product catalog with search, band and category filtering"], ["images/mi2-about.jpg", "About page highlighting services, 5-year Shopee reputation, and carried brands"], ["images/mi2-contact.png", "Contact and inquiry form for quotations and radio programming"]]}, "cuda": {"title": "CPU vs. GPU terrain generation with CUDA", "kind": "Group of 4", "status": "In progress", "desc": "Perlin-noise heightmap generation benchmarked across CPU and NVIDIA GPU implementations to measure when CUDA outperforms sequential C++.", "tech": ["CUDA", "C/C++"], "repo": "https://github.com/mysteriouskimsajaang/CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-", "ph": "CUDA", "og": "https://opengraph.githubassets.com/1/mysteriouskimsajaang/CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-"}, "rag": {"title": "Offline RAG study assistant", "kind": "Personal project", "status": "Completed", "desc": "A private PDF question-answering app. Documents, embeddings and answers never leave your computer.", "points": ["PDFs are split into 700-character chunks with 100 characters of overlap", "Embeddings from nomic-embed-text are stored in a local Chroma vector database", "Answers come from llama3.2 through Ollama, using only the retrieved passages, with the source pages shown", "Optional BM25 hybrid search and FlashRank re-ranking for better accuracy", "Packaged with Docker Compose for one-command setup"], "tech": ["Python", "LangChain", "Ollama", "ChromaDB", "Streamlit", "Docker"], "repo": "https://github.com/mysteriouskimsajaang/Retrieval-Augmented-Generation", "shots": [["images/rag.jpg", "Upload screen with local model settings"]]}}}</script>
   <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="wtitle">
     <div class="window">
       <div class="tb">
@@ -1297,7 +1418,7 @@
         kind: 'Group project',
         status: 'Completed',
         desc: 'A Python game environment for training and testing an agent, with a custom Gymnasium environment, Pygame visualization, and NumPy-based computations.',
-        points: ['Defines a custom environment for an agent to interact with', 'Uses Gymnasium for the reinforcement-learning environment interface', 'Includes a Pygame view for visualizing the simulation'],
+        points: ['Defines a custom Gymnasium environment with observation spaces, state transitions and reward engineering', 'Simulates agent training with Q-learning, exploration decay (epsilon-greedy), and evasion pathfinding', 'Visualizes Pygame rendering and live telemetry tracking win rates, rewards, and policy convergence'],
         tech: ['Python', 'Gymnasium', 'Pygame', 'NumPy'],
         repo: 'https://github.com/mysteriouskimsajaang/CSINTSY-Catbot-Group95',
         shots: [['images/catbot-game.png', 'Catbot game environment rendered from the project']]
@@ -1345,7 +1466,6 @@
 
       function showDemo(skip) {
         stop(); var p = P[cur]; stage.innerHTML = ''; thumbs.innerHTML = ''; tctl.hidden = true;
-        if (cur === 'os') { showOsDemo(p); return }
         if (cur === 'catbot') { showCatbotDemo(); return }
         cap.textContent = 'Recorded from the compiled program. Highlighted text is what was typed.';
         var term = el('div', 'term'), bar = el('div', 'tt', p.exe), pre = el('pre');
@@ -1382,141 +1502,381 @@
       }
 
       function showCatbotDemo() {
-        cap.textContent = 'Browser simulation based on the CatChaseEnv 8×8 grid, keyboard controls, and cat movement in the Python project.';
-        var app = el('div', 'cat-demo'), board = el('div', 'cat-board'), status = el('div', 'cat-status', 'Arrow keys or buttons to move • Q resets');
-        var controls = el('div', 'cat-controls'), reset = el('button', null, 'Reset'), hint = el('span', null, 'Catbot vs. Trainer cat');
-        var player = { r: 0, c: 0 }, cat = { r: 7, c: 7 }, cells = [];
-        status.setAttribute('aria-live', 'polite'); app.appendChild(status);
-        for (var i = 0; i < 64; i++) { var cell = el('div', 'cat-cell'); cells.push(cell); board.appendChild(cell) }
-        function draw(message) {
-          cells.forEach(function (cell) { cell.innerHTML = '' });
+        stop();
+        cap.textContent = 'Automated Q-learning simulation in the 8×8 grid. Watch Catbot explore, update Q-values, and learn to evade the Trainer Cat to reach the goal.';
+
+        var app = el('div', 'cat-demo');
+        var main = el('div', 'cat-main');
+        var board = el('div', 'cat-board');
+        var legend = el('div', 'cat-legend');
+        legend.innerHTML = '<span><img src="images/catbot.png" alt="Catbot"> Agent (Catbot)</span>' +
+          '<span><img src="images/trainer-dp.png" alt="Trainer cat"> Hazard (Trainer Cat)</span>' +
+          '<span><span class="goal-badge">🐟</span> Goal</span>';
+        main.appendChild(board);
+        main.appendChild(legend);
+
+        var sidebar = el('div', 'cat-sidebar');
+        var hudHead = el('div', 'cat-hud-head');
+        var hudTitle = el('div', 'cat-hud-title', 'Q-Learning RL Agent');
+        var phaseTag = el('span', 'cat-phase exploring', 'Exploration');
+        hudHead.appendChild(hudTitle);
+        hudHead.appendChild(phaseTag);
+
+        var statsBox = el('div', 'cat-stats');
+        var statEp = el('div', 'cat-stat');
+        statEp.appendChild(el('span', 'lbl', 'Episode'));
+        var valEp = el('span', 'val', '1');
+        statEp.appendChild(valEp);
+
+        var statWin = el('div', 'cat-stat');
+        statWin.appendChild(el('span', 'lbl', 'Win Rate'));
+        var valWin = el('span', 'val', '0%');
+        statWin.appendChild(valWin);
+
+        var statRew = el('div', 'cat-stat');
+        statRew.appendChild(el('span', 'lbl', 'Last Reward'));
+        var valRew = el('span', 'val', '0');
+        statRew.appendChild(valRew);
+
+        var statEps = el('div', 'cat-stat');
+        statEps.appendChild(el('span', 'lbl', 'Exploration (ε)'));
+        var valEps = el('span', 'val', '95%');
+        statEps.appendChild(valEps);
+
+        statsBox.appendChild(statEp);
+        statsBox.appendChild(statWin);
+        statsBox.appendChild(statRew);
+        statsBox.appendChild(statEps);
+
+        var epsWrap = el('div', 'cat-eps-wrap');
+        epsWrap.innerHTML = '<div class="cat-eps-row"><span>Explore (random)</span><span>Exploit (learned)</span></div>';
+        var epsBar = el('div', 'cat-eps-bar');
+        var epsFill = el('div', 'cat-eps-fill');
+        epsFill.style.width = '95%';
+        epsBar.appendChild(epsFill);
+        epsWrap.appendChild(epsBar);
+
+        var logBox = el('div', 'cat-log', 'Starting simulation: Catbot takes random exploratory actions to discover rewards.');
+
+        var controlsBox = el('div', 'cat-controls-box');
+        var btnRow = el('div', 'cat-btn-row');
+        var playBtn = el('button', 'cat-btn pri', '⏸ Pause');
+        var stepBtn = el('button', 'cat-btn', 'Step');
+        var train10Btn = el('button', 'cat-btn', '+10 Ep');
+        btnRow.appendChild(playBtn);
+        btnRow.appendChild(stepBtn);
+        btnRow.appendChild(train10Btn);
+
+        var presetRow = el('div', 'cat-opt-row');
+        presetRow.innerHTML = '<span class="cat-opt-lbl">Presets:</span>';
+        var pre0 = el('button', 'cat-pill active', 'Ep 1');
+        var pre15 = el('button', 'cat-pill', 'Ep 15');
+        var pre50 = el('button', 'cat-pill', 'Ep 50');
+        presetRow.appendChild(pre0);
+        presetRow.appendChild(pre15);
+        presetRow.appendChild(pre50);
+
+        var speedRow = el('div', 'cat-opt-row');
+        speedRow.innerHTML = '<span class="cat-opt-lbl">Speed:</span>';
+        var spd1 = el('button', 'cat-pill active', '1x');
+        var spd2 = el('button', 'cat-pill', '2x');
+        var spd5 = el('button', 'cat-pill', '5x');
+        speedRow.appendChild(spd1);
+        speedRow.appendChild(spd2);
+        speedRow.appendChild(spd5);
+
+        controlsBox.appendChild(btnRow);
+        controlsBox.appendChild(presetRow);
+        controlsBox.appendChild(speedRow);
+
+        sidebar.appendChild(hudHead);
+        sidebar.appendChild(statsBox);
+        sidebar.appendChild(epsWrap);
+        sidebar.appendChild(logBox);
+        sidebar.appendChild(controlsBox);
+
+        app.appendChild(main);
+        app.appendChild(sidebar);
+        stage.appendChild(app);
+
+        var cells = [];
+        for (var i = 0; i < 64; i++) {
+          var cell = el('div', 'cat-cell');
+          cells.push(cell);
+          board.appendChild(cell);
+        }
+
+        var Q = {};
+        var actions = [[-1, 0, 'Up'], [1, 0, 'Down'], [0, -1, 'Left'], [0, 1, 'Right']];
+        var player = { r: 0, c: 0 }, cat = { r: 7, c: 7 }, goal = { r: 7, c: 0 };
+        var trail = [];
+        var episode = 1, wins = 0, totalEpisodes = 0, epReward = 0, lastReward = 0;
+        var steps = 0, epsilon = 0.95, isRunning = true, speed = 320;
+        var isResetting = false;
+
+        function stateKey(pr, pc, cr, cc, gr, gc) {
+          var drc = Math.max(-3, Math.min(3, cr - pr));
+          var dcc = Math.max(-3, Math.min(3, cc - pc));
+          var drg = Math.sign(gr - pr);
+          var dcg = Math.sign(gc - pc);
+          return drc + ',' + dcc + ',' + drg + ',' + dcg;
+        }
+
+        function getQ(s) {
+          if (!Q[s]) Q[s] = [0, 0, 0, 0];
+          return Q[s];
+        }
+
+        function updateHUD(message, phaseClass, phaseText) {
+          valEp.textContent = episode;
+          valWin.textContent = totalEpisodes > 0 ? Math.round((wins / totalEpisodes) * 100) + '%' : '0%';
+          valRew.textContent = (lastReward > 0 ? '+' : '') + lastReward;
+          var epPct = Math.round(epsilon * 100);
+          valEps.textContent = epPct + '%';
+          epsFill.style.width = epPct + '%';
+          if (message) logBox.textContent = message;
+          if (phaseText) {
+            phaseTag.textContent = phaseText;
+            phaseTag.className = 'cat-phase ' + phaseClass;
+          }
+        }
+
+        function renderBoard() {
+          cells.forEach(function (c) {
+            c.className = 'cat-cell';
+            c.innerHTML = '';
+          });
+          for (var dr = -1; dr <= 1; dr++) {
+            for (var dc = -1; dc <= 1; dc++) {
+              if (dr === 0 && dc === 0) continue;
+              var dnr = cat.r + dr, dnc = cat.c + dc;
+              if (dnr >= 0 && dnr < 8 && dnc >= 0 && dnc < 8) {
+                cells[dnr * 8 + dnc].classList.add('danger');
+              }
+            }
+          }
+          trail.forEach(function (pos) {
+            if (!(pos.r === player.r && pos.c === player.c)) {
+              cells[pos.r * 8 + pos.c].classList.add('trail');
+            }
+          });
+          var gi = goal.r * 8 + goal.c;
+          cells[gi].classList.add('goal');
+          cells[gi].appendChild(el('span', 'goal-badge', '🐟'));
+
           var pi = player.r * 8 + player.c, ci = cat.r * 8 + cat.c;
           function sprite(src, alt) { var img = el('img'); img.src = src; img.alt = alt; return img }
-          if (pi === ci) { cells[pi].appendChild(sprite('images/catbot.png', 'Catbot caught by the cat')) }
-          else { cells[pi].appendChild(sprite('images/catbot.png', 'Catbot')); cells[ci].appendChild(sprite('images/trainer-dp.png', 'Trainer cat')) }
-          status.textContent = message || 'Arrow keys or buttons to move • Q resets';
-        }
-        function moveCat() {
-          if (cat.r < player.r) cat.r++; else if (cat.r > player.r) cat.r--; else if (cat.c < player.c) cat.c++; else if (cat.c > player.c) cat.c--;
-        }
-        function move(dr, dc) {
-          var nr = Math.max(0, Math.min(7, player.r + dr)), nc = Math.max(0, Math.min(7, player.c + dc));
-          if (nr === player.r && nc === player.c) return;
-          player.r = nr; player.c = nc; moveCat();
-          draw(player.r === cat.r && player.c === cat.c ? 'Game over — the cat caught Catbot. Press Reset.' : 'Catbot moved • the cat is chasing');
-        }
-        [['↑', -1, 0], ['↓', 1, 0], ['←', 0, -1], ['→', 0, 1]].forEach(function (item) {
-          var b = el('button', null, item[0]); b.type = 'button'; b.setAttribute('aria-label', 'Move ' + item[0]); b.addEventListener('click', function () { move(item[1], item[2]) }); controls.appendChild(b)
-        });
-        reset.type = 'button'; reset.addEventListener('click', function () { player = { r: 0, c: 0 }; cat = { r: 7, c: 7 }; draw() });
-        controls.insertBefore(reset, controls.firstChild); controls.appendChild(hint);
-        app.appendChild(board); app.appendChild(controls); stage.appendChild(app); draw();
-        function key(e) { var map = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1] }; if (map[e.key]) { e.preventDefault(); move(map[e.key][0], map[e.key][1]) } if (e.key.toLowerCase() === 'q') reset.click() }
-        app.tabIndex = 0; app.addEventListener('keydown', key); app.focus();
-      }
-
-      function showOsDemo(p) {
-        cap.textContent = 'Interactive preview based on the Dear ImGui desktop shell in the C++ application.';
-        var app = el('div', 'os-demo'), icons = el('div', 'os-icons'), taskbar = el('div', 'os-taskbar'), windows = {};
-        function openApp(id, title, body) {
-          if (windows[id]) { windows[id].remove(); delete windows[id]; return }
-          var win = el('section', 'os-window'), head = el('div', 'os-title', title), close = el('button', 'os-close', '×'), content = el('div', 'os-content');
-          close.type = 'button'; close.setAttribute('aria-label', 'Close ' + title); close.addEventListener('click', function () { win.remove(); delete windows[id] });
-          head.appendChild(close); content.innerHTML = body; win.appendChild(head); win.appendChild(content); app.appendChild(win); windows[id] = win;
-        }
-        [['explorer', '📁', 'File Explorer', '<button>Documents</button><button>Downloads</button><button>Pictures</button><button>Music</button><button>Videos</button>'],
-          ['system', '⚙', 'System Information', '<p>CSOPESY Desktop OS Emulator</p><p>Window: 1280 × 720</p><p>Renderer: OpenGL 3.0</p><p>Shell: Dear ImGui</p>'],
-          ['tasks', '▣', 'Task Manager', '<p>Processes: 3</p><p>CPU usage: 18%</p><p>Memory: 246 MB</p><button>Refresh process list</button>']].forEach(function (item) {
-            var button = el('button', 'os-icon'), glyph = el('div', 'os-glyph', item[1]);
-            button.type = 'button'; button.appendChild(glyph); button.appendChild(el('span', null, item[2])); button.addEventListener('click', function () { openApp(item[0], item[2], item[3]) }); icons.appendChild(button)
-          });
-        var start = el('button', null, '▦  Start'), clock = el('span', null, 'CSOPESY Desktop  •  12:00 PM');
-        start.type = 'button'; start.addEventListener('click', function () { openApp('system', 'System Information', '<p>Desktop shell active.</p><p>Use the icons to open File Explorer, System Information, or Task Manager.</p>') });
-        taskbar.appendChild(start); taskbar.appendChild(clock); app.appendChild(icons); app.appendChild(taskbar); stage.appendChild(app)
-      }
-
-      function showInteractive(id, p) {
-        cap.textContent = 'Interactive preview. Enter a command below to try the workflow.';
-        var term = el('div', 'term'), bar = el('div', 'tt', p.exe), pre = el('pre');
-        pre.setAttribute('aria-label', 'Interactive demo of ' + p.title); pre.tabIndex = 0;
-        term.appendChild(bar); term.appendChild(pre);
-        var controls = el('form', 'demo-command'), input = el('input'), send = el('button', 'btn sm pri', 'Send');
-        input.type = 'text'; input.autocomplete = 'off'; input.setAttribute('aria-label', 'Demo command');
-        input.placeholder = id === 'sched' ? 'Try: initialize, screen -s demo, process-smi' : id === 'payroll' ? 'Try: d, a, e, or x' : id === 'food' ? 'Try: register, add, list, or search' : 'Try: load notes, ask what is CUDA, sources';
-        controls.appendChild(input); controls.appendChild(send); term.appendChild(controls); stage.appendChild(term);
-        var state = { step: 'menu', name: '', type: '', rate: 0, days: 0, hours: 0, items: [] };
-        function write(text, cls) {
-          var line = el('span', cls || null, text + '\n'); pre.appendChild(line); pre.scrollTop = pre.scrollHeight
-        }
-        function prompt(text) { write(text); input.focus() }
-        function boot() {
-          if (id === 'sched') {
-            write('CPU Scheduler interactive preview\nType initialize, screen -s demo, process-smi, screen -ls, or clear.\nroot:\\> ')
-          } else if (id === 'payroll') {
-            write('Welcome to Payslip Computation!\n[D] Add details  [A] Add attendance  [E] Compute salary  [X] Exit\nAnswer: ')
-          } else if (id === 'food') {
-            write('Food Log interactive preview\nCommands: register, login, add, list, search, logout\nfood-log> ')
+          if (pi === ci) {
+            cells[pi].appendChild(sprite('images/catbot.png', 'Caught!'));
           } else {
-            write('Offline PDF Assistant interactive preview\nCommands: load notes, ask <question>, pipeline, sources, clear\nrag> ')
+            cells[pi].appendChild(sprite('images/catbot.png', 'Catbot'));
+            cells[ci].appendChild(sprite('images/trainer-dp.png', 'Trainer cat'));
           }
         }
-        function scheduler(command) {
-          var c = command.toLowerCase();
-          if (c === 'clear') { pre.innerHTML = ''; return prompt('root:\\> ') }
-          if (c === 'initialize') return prompt('Initialized 4 CPU(s), round robin scheduler.\nroot:\\> ');
-          if (c.indexOf('screen -s ') === 0) return prompt('Attached to "' + command.slice(11) + '". Type process-smi to inspect it.\nprocess> ');
-          if (c === 'process-smi') return prompt('Process status: FINISHED\nCore: 0\nLogs: "Hello world from demo!"\nprocess> ');
-          if (c === 'screen -ls') return prompt('CPU utilization: 25.0%\nRunning processes: demo (FINISHED)\nroot:\\> ');
-          if (c === 'scheduler-start') return prompt('Scheduler process generation started.\nroot:\\> ');
-          if (c === 'scheduler-stop') return prompt('Scheduler process generation stopped.\nroot:\\> ');
-          prompt('Unknown command. Try initialize, screen -s demo, process-smi, or screen -ls.\nroot:\\> ')
-        }
-        function payroll(command) {
-          var value = command.trim();
-          if (state.step === 'name') { state.name = value; state.step = 'type'; return prompt('Enter wage type [D]aily or [H]ourly: ') }
-          if (state.step === 'type') { state.type = value.toUpperCase(); state.step = 'rate'; return prompt('Enter wage rate: ') }
-          if (state.step === 'rate') { state.rate = Number(value) || 0; state.step = 'menu'; return prompt('Details saved for ' + state.name + '.\nAnswer: ') }
-          if (state.step === 'days') { state.days = Number(value) || 0; state.step = 'hours'; return prompt('Enter hours worked per day: ') }
-          if (state.step === 'hours') { state.hours = Number(value) || 0; state.step = 'menu'; return prompt('Attendance saved.\nAnswer: ') }
-          var c = value.toLowerCase();
-          if (c === 'd') { state.step = 'name'; return prompt('Enter your full name: ') }
-          if (c === 'a') { state.step = 'days'; return prompt('Enter days worked: ') }
-          if (c === 'e') { var total = state.type === 'H' ? state.rate * state.hours * state.days : state.rate * state.days; return prompt('Computed gross salary for ' + (state.name || 'employee') + ': PHP ' + total.toFixed(2) + '\nAnswer: ') }
-          if (c === 'x') return prompt('Goodbye! You can try again with d, a, or e.')
-          prompt('Choose d (details), a (attendance), e (compute), or x (exit).\nAnswer: ')
-        }
-        function food(command) {
-          var value = command.trim(), c = value.toLowerCase();
-          if (c === 'register') return prompt('Demo account ready. Try add Pancakes, list, or search rice.\nfood-log> ');
-          if (c === 'login') return prompt('Logged in as demo-user.\nfood-log> ');
-          if (c.indexOf('add ') === 0) { state.items.push(value.slice(4)); return prompt('Saved recipe: ' + value.slice(4) + '.\nfood-log> ') }
-          if (c === 'list') return prompt(state.items.length ? 'Recipes:\n- ' + state.items.join('\n- ') + '\nfood-log> ' : 'No recipes yet. Try: add Pancakes\nfood-log> ');
-          if (c.indexOf('search ') === 0) return prompt('Search results for "' + value.slice(7) + '": ' + (state.items.length ? state.items.join(', ') : 'none') + '\nfood-log> ');
-          if (c === 'logout') return prompt('Logged out.\nfood-log> ');
-          prompt('Try register, login, add <recipe>, list, search <term>, or logout.\nfood-log> ')
-        }
-        function rag(command) {
-          var value = command.trim(), c = value.toLowerCase();
-          if (c === 'clear') { pre.innerHTML = ''; return prompt('rag> ') }
-          if (c === 'load notes' || c === 'load lecture notes') return prompt('Loaded: Operating Systems Lecture Notes.pdf (18 pages)\n[1/3] Split PDF into 42 overlapping chunks\n[2/3] Embed chunks with nomic-embed-text\n[3/3] Saved local vector index (ChromaDB)\nNo cloud API was used.\nrag> ');
-          if (c === 'pipeline' || c === 'how it works') return prompt('1. PDFLoader reads the document\n2. RecursiveCharacterTextSplitter creates chunks\n3. nomic-embed-text converts chunks and questions into vectors\n4. ChromaDB retrieves the closest chunks\n5. The retrieved context is sent to the local model:\n   ollama run llama3.2\n6. The answer is returned with source pages\nrag> ');
-          if (c === 'sources') return prompt('Sources:\n- Operating Systems Lecture Notes.pdf, page 4\n- Operating Systems Lecture Notes.pdf, page 11\nrag> ');
-          if (c.indexOf('ask ') === 0 || c.indexOf('question ') === 0 || !/^(load|sources|clear)$/.test(c)) {
-            var question = c.indexOf('ask ') === 0 ? value.slice(4) : c.indexOf('question ') === 0 ? value.slice(9) : value, answer = 'I could not find a matching passage in the local notes.';
-            if (/cuda|gpu|parallel/i.test(question)) answer = 'CUDA lets a program run thousands of lightweight threads on a GPU. It is most useful when the work can be split into many independent operations.';
-            else if (/process|scheduler|round robin/i.test(question)) answer = 'Round Robin scheduling gives each ready process a fixed time quantum before moving to the next process, improving fairness.';
-            else if (/rag|retrieval|embedding/i.test(question)) answer = 'RAG retrieves relevant document chunks first, then gives those chunks to a local language model as context for its answer.';
-            else if (/what is ai|artificial intelligence|machine learning/i.test(question)) answer = 'Artificial intelligence is the field of building systems that perform tasks requiring human-like reasoning, such as recognizing patterns, making predictions, and generating language.';
-            return prompt('[retrieve] ChromaDB: 2 matching chunks (similarity 0.86)\n[generate] ollama run llama3.2\n\nAnswer:\n' + answer + '\n\nContext: Operating Systems Lecture Notes.pdf, page 4\nrag> ')
+
+        function runOneTrainingEpisode() {
+          var pr = 0, pc = 0, cr = 7, cc = 7, gr = 7, gc = 0;
+          var done = false, sCount = 0;
+          while (!done && sCount < 40) {
+            sCount++;
+            var s = stateKey(pr, pc, cr, cc, gr, gc);
+            var q = getQ(s);
+            var a = (Math.random() < epsilon) ? Math.floor(Math.random() * 4) : 0;
+            if (Math.random() >= epsilon) {
+              var maxVal = -Infinity;
+              for (var j = 0; j < 4; j++) {
+                if (q[j] > maxVal) { maxVal = q[j]; a = j; }
+              }
+            }
+            var npr = Math.max(0, Math.min(7, pr + actions[a][0]));
+            var npc = Math.max(0, Math.min(7, pc + actions[a][1]));
+            var wallPen = (npr === pr && npc === pc) ? -5 : 0;
+            pr = npr; pc = npc;
+            if (cr < pr) cr++; else if (cr > pr) cr--;
+            else if (cc < pc) cc++; else if (cc > pc) cc--;
+
+            var r = -1 + wallPen;
+            var distCat = Math.abs(pr - cr) + Math.abs(pc - cc);
+            if (distCat <= 1) r -= 10;
+            else if (distCat >= 3) r += 1;
+
+            if (pr === gr && pc === gc) {
+              r += 100; done = true; wins++;
+            } else if (pr === cr && pc === cc) {
+              r -= 100; done = true;
+            }
+            var nextS = stateKey(pr, pc, cr, cc, gr, gc);
+            var nextMax = done ? 0 : Math.max.apply(null, getQ(nextS));
+            q[a] += 0.35 * (r + 0.85 * nextMax - q[a]);
           }
-          prompt('Try load notes, ask <question>, sources, or clear.\nrag> ')
+          totalEpisodes++;
+          episode++;
+          epsilon = Math.max(0.05, epsilon * 0.92);
         }
-        controls.addEventListener('submit', function (e) {
-          e.preventDefault(); var command = input.value.trim(); if (!command) return;
-          write('> ' + command, 'in'); input.value = '';
-          if (id === 'sched') scheduler(command); else if (id === 'payroll') payroll(command); else if (id === 'food') food(command); else rag(command)
+
+        function tick() {
+          stop();
+          if (!isRunning) return;
+
+          if (isResetting) {
+            isResetting = false;
+            player = { r: 0, c: 0 };
+            cat = { r: 7, c: 7 };
+            trail = [];
+            steps = 0;
+            epReward = 0;
+            renderBoard();
+            var phClass = epsilon > 0.5 ? 'exploring' : (epsilon > 0.15 ? 'learning' : 'trained');
+            var phText = epsilon > 0.5 ? 'Exploration' : (epsilon > 0.15 ? 'Learning' : 'Trained Policy');
+            updateHUD('New episode started • Choosing next action...', phClass, phText);
+            timer = setTimeout(tick, speed);
+            return;
+          }
+
+          steps++;
+          var s = stateKey(player.r, player.c, cat.r, cat.c, goal.r, goal.c);
+          var q = getQ(s);
+          var isExploration = Math.random() < epsilon;
+          var a = 0;
+          if (isExploration) {
+            a = Math.floor(Math.random() * 4);
+          } else {
+            var maxVal = -Infinity;
+            for (var j = 0; j < 4; j++) {
+              if (q[j] > maxVal) { maxVal = q[j]; a = j; }
+            }
+          }
+
+          var actName = actions[a][2];
+          var npr = Math.max(0, Math.min(7, player.r + actions[a][0]));
+          var npc = Math.max(0, Math.min(7, player.c + actions[a][1]));
+          var wallPen = (npr === player.r && npc === player.c) ? -5 : 0;
+          player.r = npr;
+          player.c = npc;
+          trail.push({ r: npr, c: npc });
+          if (trail.length > 5) trail.shift();
+
+          if (cat.r < player.r) cat.r++; else if (cat.r > player.r) cat.r--;
+          else if (cat.c < player.c) cat.c++; else if (cat.c > player.c) cat.c--;
+
+          var r = -1 + wallPen;
+          var distCat = Math.abs(player.r - cat.r) + Math.abs(player.c - cat.c);
+          if (distCat <= 1) r -= 10;
+          else if (distCat >= 3) r += 1;
+
+          var done = false;
+          var logMsg = '';
+          if (player.r === goal.r && player.c === goal.c) {
+            r += 100; done = true; wins++;
+            logMsg = '★ GOAL REACHED! (+100 reward) Evasion successful!';
+          } else if (player.r === cat.r && player.c === cat.c) {
+            r -= 100; done = true;
+            logMsg = '⚠ Caught by Trainer Cat! (-100 penalty) Q-values updated.';
+          } else if (steps >= 35) {
+            done = true;
+            logMsg = '⏱ Step limit reached. Resetting for next episode.';
+          } else {
+            logMsg = (isExploration ? '[Explore] Random: ' : '[Exploit] Best Q: ') + actName + ' (Q=' + q[a].toFixed(1) + ') • Dist to cat: ' + distCat;
+          }
+
+          epReward += r;
+          var nextS = stateKey(player.r, player.c, cat.r, cat.c, goal.r, goal.c);
+          var nextMax = done ? 0 : Math.max.apply(null, getQ(nextS));
+          q[a] += 0.35 * (r + 0.85 * nextMax - q[a]);
+
+          renderBoard();
+
+          var phClass = epsilon > 0.5 ? 'exploring' : (epsilon > 0.15 ? 'learning' : 'trained');
+          var phText = epsilon > 0.5 ? 'Exploration' : (epsilon > 0.15 ? 'Learning' : 'Trained Policy');
+          updateHUD(logMsg, phClass, phText);
+
+          if (done) {
+            totalEpisodes++;
+            episode++;
+            lastReward = epReward;
+            epsilon = Math.max(0.05, epsilon * 0.92);
+            isResetting = true;
+            timer = setTimeout(tick, Math.max(speed * 1.8, 600));
+          } else {
+            timer = setTimeout(tick, speed);
+          }
+        }
+
+        playBtn.addEventListener('click', function () {
+          isRunning = !isRunning;
+          playBtn.textContent = isRunning ? '⏸ Pause' : '▶ Play';
+          playBtn.classList.toggle('pri', isRunning);
+          if (isRunning) tick();
+          else stop();
         });
-        boot(); input.focus()
+
+        stepBtn.addEventListener('click', function () {
+          isRunning = false;
+          playBtn.textContent = '▶ Play';
+          playBtn.classList.remove('pri');
+          tick();
+        });
+
+        train10Btn.addEventListener('click', function () {
+          stop();
+          for (var k = 0; k < 10; k++) runOneTrainingEpisode();
+          isResetting = true;
+          updateHUD('Trained +10 episodes in background. Epsilon now ' + Math.round(epsilon * 100) + '%. Resuming...', 
+            epsilon > 0.5 ? 'exploring' : (epsilon > 0.15 ? 'learning' : 'trained'),
+            epsilon > 0.5 ? 'Exploration' : (epsilon > 0.15 ? 'Learning' : 'Trained Policy'));
+          if (isRunning) timer = setTimeout(tick, speed);
+        });
+
+        function setActivePill(container, clicked) {
+          container.querySelectorAll('.cat-pill').forEach(function (p) { p.classList.remove('active') });
+          clicked.classList.add('active');
+        }
+
+        pre0.addEventListener('click', function () {
+          stop();
+          setActivePill(presetRow, pre0);
+          Q = {}; episode = 1; wins = 0; totalEpisodes = 0; epsilon = 0.95; lastReward = 0;
+          isResetting = true;
+          updateHUD('Reset to Episode 1 (Untrained). High random exploration.', 'exploring', 'Exploration');
+          if (isRunning) timer = setTimeout(tick, speed);
+        });
+
+        pre15.addEventListener('click', function () {
+          stop();
+          setActivePill(presetRow, pre15);
+          Q = {}; episode = 1; wins = 0; totalEpisodes = 0; epsilon = 0.95;
+          for (var k = 0; k < 15; k++) runOneTrainingEpisode();
+          isResetting = true;
+          updateHUD('Jumped to Episode 15 (Learning). Q-values formed, exploring less.', 'learning', 'Learning');
+          if (isRunning) timer = setTimeout(tick, speed);
+        });
+
+        pre50.addEventListener('click', function () {
+          stop();
+          setActivePill(presetRow, pre50);
+          Q = {}; episode = 1; wins = 0; totalEpisodes = 0; epsilon = 0.95;
+          for (var k = 0; k < 50; k++) runOneTrainingEpisode();
+          isResetting = true;
+          updateHUD('Jumped to Episode 50 (Trained Policy). Mastered evasion route.', 'trained', 'Trained Policy');
+          if (isRunning) timer = setTimeout(tick, speed);
+        });
+
+        spd1.addEventListener('click', function () {
+          setActivePill(speedRow, spd1);
+          speed = 320;
+        });
+        spd2.addEventListener('click', function () {
+          setActivePill(speedRow, spd2);
+          speed = 160;
+        });
+        spd5.addEventListener('click', function () {
+          setActivePill(speedRow, spd5);
+          speed = 60;
+        });
+
+        renderBoard();
+        updateHUD('Starting automated Q-learning simulation...', 'exploring', 'Exploration');
+        timer = setTimeout(tick, 400);
       }
 
       function setMode(m) {
@@ -1534,8 +1894,9 @@
         var tech = $('vtech'); tech.innerHTML = ''; p.tech.forEach(function (t) { tech.appendChild(el('li', null, t)) });
         var r = $('vrepo'); r.innerHTML = '';
         if (p.repo) { var a = el('a', 'btn pri'); a.href = p.repo; a.target = '_blank'; a.rel = 'noopener'; a.innerHTML = '<svg aria-hidden="true"><use href="#i-gh" /></svg>View source on GitHub'; r.appendChild(a) }
-        tabs.hidden = !(p.demo || id === 'os' || id === 'catbot');
-        setMode((p.demo || id === 'os' || id === 'catbot') && m === 'demo' ? 'demo' : 'shots');
+        tabs.hidden = !(p.demo || id === 'catbot');
+        tDemo.textContent = (id === 'catbot') ? 'Watch RL training' : 'Try me';
+        setMode((p.demo || id === 'catbot') && m === 'demo' ? 'demo' : 'shots');
       }
 
       function open(id, m, from) {
@@ -1577,7 +1938,15 @@
       var U = 'mysteriouskimsajaang', GH = 'https://github.com/' + U, LI = 'https://www.linkedin.com/in/kane-joshua-ibanez-213274338/';
       var modal = document.getElementById('modal'), body = document.getElementById('wbody'), last = null;
       function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] }) }
-      var FALL = [['Retrieval-Augmented-Generation', 'Offline PDF question answering with a local model', 'Python'], ['CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-', 'CPU vs. GPU terrain generation with CUDA', 'Cuda'], ['Process-Scheduler-CLI', 'Command-line process scheduler', 'C++'], ['Payroll-Computation-in-C', 'Payroll computation program', 'C'], ['Food-Log-using-C-', 'Food log and recipe manager in C utilizing arrays', 'C'], ['App-Tracker', 'Social game backlog tracker web app', 'Handlebars'], ['OS_EMULATOR', 'Desktop-style OS emulator mockup with graphical shell', 'C++']];
+      var FALL = [
+        ['MI-II-Shop', 'Two-way radio supply and communications equipment online shop', 'JavaScript'],
+        ['App-Tracker', 'Social game backlog tracker web app', 'Handlebars'],
+        ['Retrieval-Augmented-Generation', 'Offline PDF question answering with a local model', 'Python'],
+        ['CPU-vs.-GPU-Terrain-Generation-Measuring-When-CUDA-Beats-Sequential-C-', 'CPU vs. GPU terrain generation with CUDA', 'Cuda'],
+        ['case-study-project-grp-4-csarch2', 'RetroSpec virtual exhibit on computer graphics evolution', 'Astro'],
+        ['CSINTSY-Catbot-Group95', 'Catbot reinforcement-learning environment', 'Python'],
+        ['IMAGPRO-Machine-Projects', 'Image processing Jupyter machine projects', 'Jupyter Notebook']
+      ];
       function repoHTML(n, d, l, up) { return '<a class="repo" href="' + GH + '/' + esc(n) + '" target="_blank" rel="noopener"><b>' + esc(n) + '</b><span>' + esc(d || 'No description yet') + '</span><small>' + esc(l || '') + (up ? ', updated ' + esc(up.slice(0, 10)) : '') + '</small></a>' }
       function github() {
         document.getElementById('wtitle').textContent = 'github.com/' + U; document.getElementById('wopen').href = GH;
